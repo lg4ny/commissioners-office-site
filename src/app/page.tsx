@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   },
 };
 
+const MAIL_CONTACT = "contact@commissionersoffice.games";
+const MAIL_DEVELOPMENT_LIST = `mailto:${MAIL_CONTACT}?subject=${encodeURIComponent("Development List")}`;
+const MAIL_FOLLOW_DEVELOPMENT = `mailto:${MAIL_CONTACT}?subject=${encodeURIComponent("Follow Development")}`;
+
 const nav = [
   { label: "Games", href: "#games" },
   { label: "Devlog", href: "#devlog" },
@@ -256,7 +260,7 @@ export default function Home() {
           </nav>
 
           <a
-            href="#follow"
+            href={MAIL_FOLLOW_DEVELOPMENT}
             className="shrink-0 rounded-lg border border-brand-gold/50 bg-gradient-to-b from-brand-gold-bright to-brand-gold px-3 py-2 text-xs font-semibold tracking-wide text-brand-panel-deep shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_6px_20px_-6px_rgba(196,160,40,0.45)] transition hover:from-[#dec04a] hover:to-[#c4a028] sm:px-4 sm:text-sm"
           >
             Follow Development
@@ -321,7 +325,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <a
-                  href="#follow"
+                  href={MAIL_DEVELOPMENT_LIST}
                   className="inline-flex items-center justify-center rounded-lg border border-brand-gold/55 bg-gradient-to-b from-brand-gold-bright to-brand-gold px-5 py-3 text-sm font-semibold text-brand-panel-deep shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_8px_28px_-6px_rgba(196,160,40,0.5)] transition hover:from-[#dec04a] hover:to-[#b89224]"
                 >
                   Join the Development List
