@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark navy / near-black — never pure black */
+  --background: #050910;
+  --background-elevated: #070d18;
+  --foreground: #f0e9dc;
+  --brand-navy: #0a1222;
+  --brand-navy-mid: #0f1a2e;
+  --brand-navy-light: #15243c;
+  --brand-panel: #0c1628;
+  --brand-panel-deep: #080f1c;
+  --brand-gold: #c4a028;
+  --brand-gold-bright: #d4b03a;
+  --brand-gold-dim: #8a7020;
+  --brand-ivory: #f0e9dc;
+  --brand-ivory-muted: #b8b0a2;
+  --brand-glow: rgba(196, 160, 40, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-navy-mid: var(--brand-navy-mid);
+  --color-brand-navy-light: var(--brand-navy-light);
+  --color-brand-panel: var(--brand-panel);
+  --color-brand-panel-deep: var(--brand-panel-deep);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-bright: var(--brand-gold-bright);
+  --color-brand-gold-dim: var(--brand-gold-dim);
+  --color-brand-ivory: var(--brand-ivory);
+  --color-brand-ivory-muted: var(--brand-ivory-muted);
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% -15%, var(--brand-glow), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(21, 36, 60, 0.45), transparent 45%),
+    radial-gradient(ellipse 70% 40% at 0% 20%, rgba(196, 160, 40, 0.04), transparent 50%),
+    linear-gradient(180deg, var(--background-elevated) 0%, var(--background) 35%, var(--background) 100%);
+  background-attachment: fixed;
+}
