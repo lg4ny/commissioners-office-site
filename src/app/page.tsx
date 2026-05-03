@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "The Commissioner's Office — Indie sports franchise simulation",
   description:
-    "Run the franchise. Build a dynasty. Shape history. An indie sports franchise simulation platform starting with Front Office Baseball.",
+    "Run your franchise. Build a dynasty. Shape history. An indie sports franchise simulation platform starting with Front Office Baseball.",
   metadataBase: new URL("https://commissionersoffice.games"),
   openGraph: {
     title: "The Commissioner's Office",
@@ -303,7 +303,7 @@ export default function Home() {
                   className="pointer-events-none absolute -left-3 top-1 hidden h-[calc(100%-0.25rem)] w-px bg-gradient-to-b from-transparent from-10% via-brand-gold/30 to-transparent to-90% lg:block"
                 />
                 <span className="relative block text-[1.7rem] leading-[1.12] shadow-[0_0_40px_-12px_rgba(240,233,220,0.12)] sm:text-3xl lg:pl-5 lg:text-[2.85rem] lg:leading-[1.06]">
-                  <span className="font-medium text-brand-ivory">Run the franchise.</span>
+                  <span className="font-medium text-brand-ivory">Run your franchise.</span>
                 </span>
                 <span className="relative mt-2 block pl-0 text-[1.45rem] leading-snug text-brand-ivory/88 sm:text-[1.65rem] lg:mt-3 lg:pl-5 lg:text-[2.2rem] lg:leading-[1.1]">
                   Build a dynasty.
