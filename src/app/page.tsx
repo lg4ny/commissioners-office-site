@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "The Commissioner's Office — Indie sports franchise simulation",
@@ -59,162 +60,26 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-function MockDashboard() {
-  const standings = [
-    { t: "Harbor City", w: 52, l: 34, gb: "—" },
-    { t: "Capitol Nine", w: 49, l: 37, gb: "3.0" },
-    { t: "Midland Stars", w: 47, l: 39, gb: "5.0" },
-    { t: "Riverfront", w: 44, l: 42, gb: "8.0" },
-    { t: "Lakeside", w: 41, l: 45, gb: "11.0" },
-  ];
-
-  const statChips = [
-    { k: "AVG", v: ".312" },
-    { k: "OBP", v: ".384" },
-    { k: "SLG", v: ".548" },
-    { k: "wRC+", v: "142" },
-    { k: "WAR", v: "4.2" },
-  ];
-
+function HeroBannerVisual() {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-brand-panel via-brand-navy-mid to-brand-panel-deep p-4 shadow-[0_1px_0_rgba(212,176,58,0.12)_inset,0_32px_64px_-20px_rgba(0,0,0,0.65),0_0_0_1px_rgba(0,0,0,0.35)] sm:p-5">
+    <figure className="relative mx-auto w-full max-w-xl lg:max-w-none">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full bg-brand-gold/08 blur-3xl"
+        className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-brand-gold/18 via-transparent to-brand-gold/8 blur-2xl"
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-gold/35 to-transparent"
-      />
-
-      <div className="relative flex flex-col gap-3.5">
-        <div className="flex flex-wrap items-end justify-between gap-3 border-b border-brand-gold/15 pb-3.5">
-          <div className="space-y-2">
-            <SectionLabel>League hub</SectionLabel>
-            <p className="text-sm font-semibold tracking-tight text-brand-ivory">
-              Continental Baseball League
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <div className="rounded-md border border-brand-gold/20 bg-brand-panel-deep/90 px-2.5 py-1.5 font-mono text-[10px] tabular-nums text-brand-ivory-muted shadow-[inset_0_1px_0_rgba(240,233,220,0.04)]">
-              Season 2042
-            </div>
-            <div className="rounded-md border border-brand-gold/30 bg-brand-gold/12 px-2.5 py-1.5 font-mono text-[10px] font-medium tabular-nums text-brand-gold-bright shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-              Day 112
-            </div>
-          </div>
-        </div>
-
-        <div className="grid gap-3 lg:grid-cols-[1fr_1.12fr]">
-          <div className="rounded-xl border border-brand-gold/18 bg-brand-panel-deep/80 p-3 shadow-[inset_0_2px_12px_rgba(0,0,0,0.35)]">
-            <div className="mb-2.5">
-              <SectionLabel>Standings · East</SectionLabel>
-            </div>
-            <div className="mb-2 grid grid-cols-[1fr_auto_auto_auto] gap-x-2 border-b border-brand-gold/12 pb-1.5 font-mono text-[9px] uppercase tracking-wider text-brand-gold/75">
-              <span>Team</span>
-              <span className="text-right">W</span>
-              <span className="text-right">L</span>
-              <span className="text-right">GB</span>
-            </div>
-            <div className="space-y-1">
-              {standings.map((row, i) => (
-                <div
-                  key={row.t}
-                  className="grid grid-cols-[1fr_auto_auto_auto] items-center gap-x-2 rounded-lg border border-transparent px-2 py-1.5 text-xs transition hover:border-brand-gold/20 hover:bg-brand-gold/[0.04]"
-                >
-                  <span className="flex min-w-0 items-center gap-2 text-brand-ivory-muted">
-                    <span className="w-4 shrink-0 font-mono tabular-nums text-brand-gold/70">
-                      {i + 1}
-                    </span>
-                    <span className="truncate text-brand-ivory">{row.t}</span>
-                  </span>
-                  <span className="font-mono tabular-nums text-brand-ivory">{row.w}</span>
-                  <span className="font-mono tabular-nums text-brand-ivory-muted">{row.l}</span>
-                  <span className="font-mono tabular-nums text-brand-ivory-muted">{row.gb}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="rounded-xl border border-brand-gold/22 bg-gradient-to-b from-brand-navy-light/35 to-brand-panel-deep/90 p-3 shadow-[inset_0_1px_0_rgba(212,176,58,0.08)]">
-              <SectionLabel>Featured player</SectionLabel>
-              <div className="mt-3 flex gap-3">
-                <div className="relative flex h-[4.5rem] w-[3.25rem] shrink-0 flex-col justify-between rounded-lg border border-brand-gold/35 bg-gradient-to-b from-brand-navy-light/60 to-brand-panel-deep p-1.5 shadow-[inset_0_1px_0_rgba(240,233,220,0.05),0_4px_12px_rgba(0,0,0,0.4)]">
-                  <span className="font-mono text-[7px] uppercase tracking-widest text-brand-gold/80">
-                    FOB
-                  </span>
-                  <span className="text-center font-serif text-lg font-bold leading-none text-brand-ivory">
-                    24
-                  </span>
-                  <span className="text-center font-mono text-[6px] uppercase text-brand-ivory-muted">
-                    Harbor
-                  </span>
-                  <span
-                    aria-hidden
-                    className="absolute right-0 top-0 h-3 w-3 rounded-bl-md border-b border-l border-brand-gold/25 bg-brand-gold/10"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="font-serif text-lg font-semibold tracking-tight text-brand-ivory">
-                    Jordan Reyes
-                  </p>
-                  <p className="text-[11px] text-brand-ivory-muted">CF · Harbor City · Age 24</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {statChips.map((s) => (
-                      <div
-                        key={s.k}
-                        className="rounded border border-brand-gold/22 bg-brand-panel-deep/90 px-1.5 py-0.5 shadow-[inset_0_1px_0_rgba(240,233,220,0.04)]"
-                      >
-                        <span className="font-mono text-[8px] uppercase tracking-wide text-brand-gold/85">
-                          {s.k}
-                        </span>
-                        <span className="ml-1 font-mono text-[11px] font-medium tabular-nums text-brand-ivory">
-                          {s.v}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-brand-gold/18 bg-brand-panel-deep/85 p-3 shadow-[inset_0_2px_10px_rgba(0,0,0,0.3)]">
-              <SectionLabel>League news</SectionLabel>
-              <ul className="mt-2.5 space-y-2 text-[11px] leading-snug text-brand-ivory-muted">
-                <li className="border-l-2 border-brand-gold/45 pl-2.5 text-brand-ivory/90">
-                  Trade wire: Stars acquire bullpen arm for two prospects.
-                </li>
-                <li className="border-l-2 border-brand-gold/28 pl-2.5">
-                  Injury update: Capitol Nine SP week-to-week.
-                </li>
-                <li className="border-l-2 border-brand-gold/15 pl-2.5">
-                  MVP race tightening as September opens.
-                </li>
-              </ul>
-            </div>
-
-            <button
-              type="button"
-              className="w-full rounded-lg border border-brand-gold/45 bg-gradient-to-b from-brand-gold/25 to-brand-gold/12 py-2.5 text-sm font-semibold tracking-[0.12em] text-brand-gold-bright shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_-8px_rgba(196,160,40,0.35)] transition hover:border-brand-gold/60 hover:from-brand-gold/35 hover:to-brand-gold/18"
-            >
-              Advance day
-            </button>
-          </div>
+      <div className="relative overflow-hidden rounded-2xl border border-brand-gold/28 bg-gradient-to-br from-brand-navy-light/25 to-brand-panel-deep shadow-[0_28px_72px_-32px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(212,176,58,0.18)] ring-1 ring-black/40">
+        <div className="relative aspect-[16/10] w-full">
+          <Image
+            src="/images/hero-banner.png"
+            alt="Front Office Baseball — league hub, standings, and in-game UI"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
         </div>
       </div>
-    </div>
-  );
-}
-
-function CoMark({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-brand-gold/45 bg-gradient-to-b from-brand-navy-light/50 to-brand-panel-deep font-serif text-[13px] font-bold leading-none tracking-tight text-brand-gold-bright shadow-[inset_0_1px_0_rgba(240,233,220,0.07),0_0_28px_-6px_rgba(196,160,40,0.35)] ring-1 ring-brand-gold/15 ${className}`}
-      aria-hidden
-    >
-      <span className="select-none">CO</span>
-    </span>
+    </figure>
   );
 }
 
@@ -231,7 +96,19 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-brand-gold/12 bg-[#050910]/88 backdrop-blur-md shadow-[0_8px_32px_-12px_rgba(0,0,0,0.5)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
           <a href="#" className="group flex min-w-0 shrink items-center gap-3">
-            <CoMark className="transition group-hover:border-brand-gold/65 group-hover:shadow-[inset_0_1px_0_rgba(240,233,220,0.1),0_0_32px_-4px_rgba(196,160,40,0.45)]" />
+            <span
+              className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-brand-gold/45 bg-gradient-to-b from-brand-navy-light/60 to-brand-panel-deep shadow-[inset_0_1px_0_rgba(240,233,220,0.08),0_0_28px_-6px_rgba(196,160,40,0.35)] ring-1 ring-brand-gold/15 transition group-hover:border-brand-gold/65 group-hover:shadow-[inset_0_1px_0_rgba(240,233,220,0.1),0_0_32px_-4px_rgba(196,160,40,0.45)]"
+              aria-hidden
+            >
+              <Image
+                src="/images/co-logo-mark.png"
+                alt=""
+                width={40}
+                height={40}
+                className="h-8 w-8 object-contain"
+                priority
+              />
+            </span>
             <span className="min-w-0 flex flex-col leading-tight">
               <span className="font-serif text-lg font-semibold tracking-tight text-brand-ivory transition group-hover:text-brand-ivory sm:text-xl">
                 The Commissioner&apos;s Office
@@ -342,7 +219,7 @@ export default function Home() {
             </div>
 
             <div className="min-w-0 lg:justify-self-end">
-              <MockDashboard />
+              <HeroBannerVisual />
             </div>
           </div>
         </section>
@@ -368,6 +245,39 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="border-b border-brand-gold/10 py-14 sm:py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:gap-12 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.9fr)] lg:gap-16 lg:px-8">
+            <div className="max-w-xl">
+              <SectionLabel>Player legacy</SectionLabel>
+              <h2 className="mt-4 font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl">
+                Cards that outlast the highlight reel
+              </h2>
+              <p className="mt-4 leading-relaxed text-brand-ivory-muted">
+                Awards, career arcs, and the quiet milestones that turn a long save into a history
+                book—the kind of texture that makes you point at the screen and say &quot;remember
+                when?&quot;
+              </p>
+            </div>
+            <figure className="relative mx-auto w-full max-w-[min(100%,22rem)] sm:max-w-sm lg:mx-0 lg:max-w-md">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-2 rounded-[1.35rem] bg-gradient-to-t from-brand-gold/12 via-transparent to-brand-gold/8 blur-xl"
+              />
+              <div className="relative overflow-hidden rounded-2xl border border-brand-gold/26 bg-brand-panel-deep shadow-[0_24px_56px_-28px_rgba(0,0,0,0.72),inset_0_1px_0_rgba(212,176,58,0.14)] ring-1 ring-black/35">
+                <div className="relative aspect-[1036/1518] w-full">
+                  <Image
+                    src="/images/player-profile-card.png"
+                    alt="Player profile card showing career stats and franchise story beats"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) min(90vw, 22rem), 28rem"
+                  />
+                </div>
+              </div>
+            </figure>
           </div>
         </section>
 
