@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "../components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +17,9 @@ const siteUrl = "https://commissionersoffice.games";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "The Commissioner’s Office",
+  title: "The Commissioner’s Office | Indie Sports Franchise Simulation",
   description:
-    "Run your franchise. Build a dynasty. Shape history. An indie sports franchise simulation platform starting with Front Office Baseball.",
+    "Run your franchise. Build a dynasty. Shape history. The Commissioner’s Office is an indie sports franchise simulation platform starting with Front Office Baseball, a fictional baseball GM sim currently in early alpha.",
   alternates: {
     canonical: "/",
   },
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "The Commissioner’s Office",
     title: "The Commissioner’s Office",
     description:
-      "Run your franchise. Build a dynasty. Shape history. An indie sports franchise simulation platform starting with Front Office Baseball.",
+      "An indie sports franchise simulation platform. First up: Front Office Baseball.",
     images: [
       {
         url: "/images/og-commissioners-office.png",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Commissioner’s Office",
     description:
-      "Run your franchise. Build a dynasty. Shape history. An indie sports franchise simulation platform starting with Front Office Baseball.",
+      "An indie sports franchise simulation platform. First up: Front Office Baseball.",
     images: ["/images/og-commissioners-office.png"],
   },
 };
@@ -55,7 +56,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }
