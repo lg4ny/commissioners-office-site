@@ -62,18 +62,18 @@ function SectionLabel({ children }: { children: ReactNode }) {
 
 function HeroBannerVisual() {
   return (
-    <figure className="relative mx-auto w-full max-w-xl lg:max-w-none">
+    <figure className="relative mx-auto w-full min-w-0 max-w-xl lg:max-w-none">
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-brand-gold/18 via-transparent to-brand-gold/8 blur-2xl"
       />
-      <div className="relative overflow-hidden rounded-2xl border border-brand-gold/28 bg-gradient-to-br from-brand-navy-light/25 to-brand-panel-deep shadow-[0_28px_72px_-32px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(212,176,58,0.18)] ring-1 ring-black/40">
-        <div className="relative aspect-[16/10] w-full">
+      <div className="relative max-w-full overflow-hidden rounded-2xl border border-brand-gold/28 bg-gradient-to-br from-brand-navy-light/25 to-brand-panel-deep shadow-[0_28px_72px_-32px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(212,176,58,0.18)] ring-1 ring-black/40">
+        <div className="relative aspect-[1200/630] w-full max-w-full">
           <Image
             src="/images/hero-banner.png"
             alt="Front Office Baseball — league hub, standings, and in-game UI"
             fill
-            className="object-cover object-center"
+            className="object-contain object-center"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
