@@ -113,7 +113,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
 
 function StatusChip({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex flex-wrap items-center gap-2 rounded-md border border-brand-gold/28 bg-brand-panel-deep/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-ivory-muted shadow-[inset_0_1px_0_rgba(212,176,58,0.08)]">
+    <div className="inline-flex flex-wrap items-center gap-1.5 rounded-md border border-brand-gold/28 bg-brand-panel-deep/90 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-brand-ivory-muted shadow-[inset_0_1px_0_rgba(212,176,58,0.08)] sm:gap-2 sm:px-3 sm:py-1.5 sm:tracking-[0.14em]">
       {children}
     </div>
   );
@@ -232,30 +232,30 @@ export default function Home() {
       </a>
 
       <header className="sticky top-0 z-50 border-b border-brand-gold/12 bg-[#050910]/92 backdrop-blur-md shadow-[0_8px_32px_-12px_rgba(0,0,0,0.55)]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:px-8">
-          <a href="#" className="group flex min-w-0 shrink items-center gap-2.5 sm:gap-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2 sm:gap-3 sm:px-4 sm:py-2.5 md:gap-4 md:px-6 md:py-3 lg:px-8 lg:py-3.5">
+          <a href="#" className="group flex min-w-0 shrink items-center gap-2 sm:gap-2.5 md:gap-3">
             {hasWordmarkLogo ? (
-              <span className="hidden min-w-0 md:block">
+              <span className="hidden min-w-0 md:block md:self-center">
                 <Image
                   src="/images/commissioners-office-logo.png"
                   alt="The Commissioner’s Office"
-                  width={320}
-                  height={63}
-                  className="h-8 w-auto max-w-[min(100%,280px)] object-contain object-left transition-opacity group-hover:opacity-95 lg:h-9"
+                  width={360}
+                  height={70}
+                  className="h-9 w-auto max-w-[min(100%,300px)] object-contain object-left transition-opacity group-hover:opacity-95 md:h-10 md:max-w-[min(100%,320px)] lg:h-11 lg:max-w-[min(100%,360px)]"
                   priority
                 />
               </span>
             ) : null}
             {hasCoMark ? (
               <span
-                className={`relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-brand-gold/45 bg-gradient-to-b from-brand-navy-light/60 to-brand-panel-deep shadow-[inset_0_1px_0_rgba(240,233,220,0.08),0_0_24px_-6px_rgba(196,160,40,0.35)] ring-1 ring-brand-gold/15 transition group-hover:border-brand-gold/65 ${hasWordmarkLogo ? "md:hidden" : ""}`}
+                className={`relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-brand-gold/45 bg-gradient-to-b from-brand-navy-light/60 to-brand-panel-deep shadow-[inset_0_1px_0_rgba(240,233,220,0.08),0_0_24px_-6px_rgba(196,160,40,0.35)] ring-1 ring-brand-gold/15 transition group-hover:border-brand-gold/65 md:h-10 md:w-10 ${hasWordmarkLogo ? "md:hidden" : ""}`}
               >
                 <Image
                   src="/images/co-logo-mark.png"
                   alt=""
-                  width={36}
-                  height={36}
-                  className="h-7 w-7 object-contain"
+                  width={40}
+                  height={40}
+                  className="h-6 w-6 object-contain md:h-8 md:w-8"
                   priority
                 />
               </span>
@@ -265,10 +265,10 @@ export default function Home() {
             ) : null}
             {hasWordmarkLogo ? (
               <span className="flex min-w-0 flex-col leading-tight md:hidden">
-                <span className="font-serif text-base font-semibold tracking-tight text-brand-ivory sm:text-lg">
+                <span className="font-serif text-[0.9375rem] font-semibold tracking-tight text-brand-ivory sm:text-base">
                   The Commissioner’s Office
                 </span>
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-brand-ivory-muted">
+                <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-brand-ivory-muted">
                   commissionersoffice.games
                 </span>
               </span>
@@ -277,7 +277,7 @@ export default function Home() {
 
           <nav
             aria-label="Primary"
-            className="hidden items-center gap-1 md:flex md:gap-4"
+            className="hidden items-center gap-0.5 md:flex md:gap-1 lg:gap-4"
           >
             {nav.map((item) => (
               <a
@@ -294,7 +294,7 @@ export default function Home() {
             href={WAITLIST_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 rounded-lg border border-brand-gold/50 bg-gradient-to-b from-brand-gold-bright to-brand-gold px-2.5 py-2 text-[11px] font-semibold tracking-wide text-brand-panel-deep shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_6px_20px_-6px_rgba(196,160,40,0.45)] transition hover:from-[#dec04a] hover:to-[#c4a028] sm:px-4 sm:text-sm"
+            className="shrink-0 rounded-lg border border-brand-gold/50 bg-gradient-to-b from-brand-gold-bright to-brand-gold px-2.5 py-1.5 text-[10px] font-semibold tracking-wide text-brand-panel-deep shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_6px_20px_-6px_rgba(196,160,40,0.45)] transition hover:from-[#dec04a] hover:to-[#c4a028] sm:px-3.5 sm:py-2 sm:text-[11px] md:px-4 md:text-sm"
           >
             <span className="hidden sm:inline">Join Development List</span>
             <span className="sm:hidden">Join List</span>
@@ -303,13 +303,13 @@ export default function Home() {
 
         <nav
           aria-label="Mobile sections"
-          className="flex flex-wrap justify-center gap-1 border-t border-brand-gold/10 px-2 py-2 md:hidden"
+          className="flex flex-wrap justify-center gap-x-0.5 gap-y-0.5 border-t border-brand-gold/[0.08] px-2 py-1 md:hidden"
         >
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-2 py-1 text-xs text-brand-ivory-muted transition hover:text-brand-gold-bright"
+              className="rounded px-2 py-0.5 text-[11px] font-medium tracking-wide text-brand-ivory-muted/90 transition hover:text-brand-gold-bright"
             >
               {item.label}
             </a>
@@ -320,25 +320,25 @@ export default function Home() {
       <main id="main" className="flex-1">
         {/* Hero */}
         <section className="border-b border-brand-gold/10" aria-labelledby="hero-heading">
-          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:gap-10 sm:px-6 sm:py-20 lg:min-h-[min(88vh,56rem)] lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.26fr)] lg:items-center lg:gap-16 lg:px-8 lg:py-28 xl:gap-20">
+          <div className="mx-auto grid max-w-6xl gap-5 px-4 py-12 sm:gap-8 sm:px-6 sm:py-16 md:gap-10 md:py-20 lg:min-h-[min(88vh,56rem)] lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.26fr)] lg:items-center lg:gap-16 lg:px-8 lg:py-28 xl:gap-20">
             <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <SectionLabel>Indie Sports Franchise Simulation</SectionLabel>
                 <BrassRule className="hidden min-w-[3rem] flex-1 sm:block" />
               </div>
 
               <h1
                 id="hero-heading"
-                className="mt-6 font-serif text-[1.65rem] font-normal leading-[1.1] tracking-[-0.02em] text-brand-ivory sm:text-3xl lg:text-[2.65rem]"
+                className="mt-4 font-serif text-[1.45rem] font-normal leading-[1.08] tracking-[-0.02em] text-brand-ivory sm:mt-6 sm:text-3xl sm:leading-[1.1] lg:text-[2.65rem] lg:leading-[1.06]"
               >
                 <span className="block font-medium">Run your franchise.</span>
-                <span className="mt-1 block text-brand-ivory/92">Build a dynasty.</span>
-                <span className="mt-1 block text-brand-ivory-muted tracking-[0.04em]">
+                <span className="mt-0.5 block text-brand-ivory/92 sm:mt-1">Build a dynasty.</span>
+                <span className="mt-0.5 block text-brand-ivory-muted tracking-[0.04em] sm:mt-1">
                   Shape history<span className="text-brand-gold">.</span>
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-brand-ivory-muted sm:text-[1.05rem]">
+              <p className="mt-3.5 max-w-xl text-[0.9375rem] leading-snug text-brand-ivory-muted sm:mt-5 sm:text-base sm:leading-relaxed lg:mt-6 lg:text-[1.05rem]">
                 The Commissioner’s Office is a new indie sports franchise simulation platform. First
                 up:{" "}
                 <span className="text-brand-ivory">Front Office Baseball</span> — a fictional
@@ -346,28 +346,29 @@ export default function Home() {
                 that grow with every save.
               </p>
 
-              <div className="mt-5 flex flex-wrap items-center gap-2">
+              <div className="mt-3 flex flex-wrap items-center gap-2 sm:mt-4">
                 <StatusChip>
                   <span className="text-brand-ivory">Front Office Baseball</span>
                   <span className="text-brand-gold/90" aria-hidden>
                     ·
                   </span>
-                  <span>Early Alpha Consolidation</span>
+                  <span className="sm:hidden">Early Alpha</span>
+                  <span className="hidden sm:inline">Early Alpha Consolidation</span>
                 </StatusChip>
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <div className="mt-5 flex flex-col gap-2 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
                 <a
                   href={WAITLIST_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg border border-brand-gold/55 bg-gradient-to-b from-brand-gold-bright to-brand-gold px-5 py-3 text-sm font-semibold text-brand-panel-deep shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_8px_28px_-6px_rgba(196,160,40,0.5)] transition hover:from-[#dec04a] hover:to-[#b89224]"
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-brand-gold/55 bg-gradient-to-b from-brand-gold-bright to-brand-gold px-4 py-2.5 text-[13px] font-semibold text-brand-panel-deep shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_8px_28px_-6px_rgba(196,160,40,0.5)] transition hover:from-[#dec04a] hover:to-[#b89224] sm:min-h-0 sm:px-5 sm:py-3 sm:text-sm"
                 >
                   Join the Development List
                 </a>
                 <a
                   href="#roadmap"
-                  className="inline-flex items-center justify-center rounded-lg border border-brand-gold/35 bg-brand-panel-deep/80 px-5 py-3 text-sm font-semibold text-brand-ivory shadow-[inset_0_1px_0_rgba(240,233,220,0.04)] transition hover:border-brand-gold/55 hover:bg-brand-navy-mid/90 hover:text-brand-gold-bright"
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-brand-gold/35 bg-brand-panel-deep/80 px-4 py-2.5 text-[13px] font-semibold text-brand-ivory shadow-[inset_0_1px_0_rgba(240,233,220,0.04)] transition hover:border-brand-gold/55 hover:bg-brand-navy-mid/90 hover:text-brand-gold-bright sm:min-h-0 sm:px-5 sm:py-3 sm:text-sm"
                 >
                   View Roadmap
                 </a>
