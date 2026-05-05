@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { GoogleAnalytics } from "../components/GoogleAnalytics";
 
@@ -14,6 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = "https://commissionersoffice.games";
+
+/** Temporary fallback so GA loads in production if the Vercel env is missing at build/runtime. */
+const GA_MEASUREMENT_ID_FALLBACK = "G-95NT7G54QV";
+
+const gaMeasurementId =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || GA_MEASUREMENT_ID_FALLBACK;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,7 +64,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <GoogleAnalytics />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', '${gaMeasurementId}', { send_page_view: false });
+        `}
+        </Script>
+        <GoogleAnalytics measurementId={gaMeasurementId} />
         {children}
       </body>
     </html>

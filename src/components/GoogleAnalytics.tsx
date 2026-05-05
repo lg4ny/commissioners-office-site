@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
@@ -30,12 +29,9 @@ function trackCtaClick(measurementId: string, params: { label: string; url: stri
   });
 }
 
-export function GoogleAnalytics() {
-  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+/** Page views + CTA clicks. gtag `<Script>` tags are rendered in `layout.tsx` (server) so they appear in initial HTML. */
+export function GoogleAnalytics({ measurementId }: { measurementId: string }) {
   const pathname = usePathname();
-
-  // Don't load GA at all without a measurement ID.
-  if (!measurementId) return null;
 
   useEffect(() => {
     const url =
@@ -70,22 +66,5 @@ export function GoogleAnalytics() {
     return () => document.removeEventListener("click", onClickCapture, true);
   }, [measurementId]);
 
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', '${measurementId}', { send_page_view: false });
-        `}
-      </Script>
-    </>
-  );
+  return null;
 }
-
