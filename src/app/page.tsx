@@ -17,7 +17,6 @@ function publicImageExists(filename: string): boolean {
 }
 
 const HERO_BANNER_PATH = "/images/hero-banner.png";
-const PLAYER_PROFILE_CARD_PATH = "/images/player-profile-card.png";
 
 const hasGameUiShell = publicImageExists("game-ui-shell.png");
 const hasTeamPageHeader = publicImageExists("team-page-header.png");
@@ -137,35 +136,16 @@ function HeroVisual() {
         className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-brand-gold/18 via-transparent to-brand-gold/8 blur-2xl"
       />
       <div className="relative w-full">
-        {/* Explicit min-height + intrinsic Image (no fill) so the panel never collapses in production */}
-        <div className="relative flex min-h-[360px] w-full items-center justify-center overflow-hidden rounded-2xl border border-brand-gold/28 bg-gradient-to-br from-brand-navy-light/25 to-brand-panel-deep px-1 py-2 shadow-[0_28px_72px_-32px_rgba(0,0,0,0.78),0_12px_48px_-24px_rgba(196,160,40,0.12),inset_0_1px_0_rgba(212,176,58,0.18)] ring-1 ring-black/40 sm:min-h-[400px] lg:min-h-[420px] lg:px-2 lg:py-3">
+        {/* object-cover + right-weighted focal point: emphasizes in-image UI / player card, de-emphasizes duplicate headline/CTA art on the left */}
+        <div className="relative min-h-[360px] w-full overflow-hidden rounded-2xl border border-brand-gold/28 bg-brand-navy-mid shadow-[0_28px_72px_-32px_rgba(0,0,0,0.78),0_12px_48px_-24px_rgba(196,160,40,0.12),inset_0_1px_0_rgba(212,176,58,0.18)] ring-1 ring-black/40 sm:min-h-[400px] lg:min-h-[440px] xl:min-h-[460px]">
           <Image
             src={HERO_BANNER_PATH}
             alt="Front Office Baseball — league hub, standings, and in-game UI"
-            width={1200}
-            height={630}
-            className="h-auto w-full max-h-[min(52vw,480px)] object-contain object-center sm:max-h-[440px] lg:max-h-[480px]"
-            priority
+            fill
+            className="object-cover object-[92%_46%] min-[400px]:object-[86%_46%] sm:object-[82%_46%] md:object-[78%_46%] lg:object-[72%_45%] xl:object-[70%_44%]"
             sizes="(max-width: 640px) 96vw, (max-width: 1024px) 90vw, 760px"
+            priority
           />
-        </div>
-        {/* Floating player card: sibling of banner frame, positioned on the stack */}
-        <div className="pointer-events-none absolute bottom-2 right-2 z-10 w-[40%] min-w-[7.25rem] max-w-[15rem] -rotate-1 sm:bottom-3 sm:right-4 sm:max-w-[16rem] sm:rotate-2 lg:bottom-4 lg:right-5 lg:max-w-[17.5rem]">
-          <div
-            aria-hidden
-            className="absolute -inset-1 rounded-xl bg-brand-gold/15 blur-md"
-          />
-          <div className="relative overflow-hidden rounded-xl border border-brand-gold/35 bg-brand-panel-deep shadow-[0_20px_40px_-12px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(212,176,58,0.2)] ring-1 ring-black/40">
-            <div className="relative aspect-[1036/1518] w-full">
-              <Image
-                src={PLAYER_PROFILE_CARD_PATH}
-                alt="Player profile card — career snapshot and franchise storytelling"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 640px) 40vw, 17.5rem"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </figure>
