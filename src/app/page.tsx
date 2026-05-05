@@ -233,45 +233,48 @@ export default function Home() {
 
       <header className="sticky top-0 z-50 border-b border-brand-gold/12 bg-[#050910]/92 backdrop-blur-md shadow-[0_8px_32px_-12px_rgba(0,0,0,0.55)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2 sm:gap-3 sm:px-4 sm:py-2.5 md:gap-4 md:px-6 md:py-3 lg:px-8 lg:py-3.5">
-          <a href="#" className="group flex min-w-0 shrink items-center gap-2 sm:gap-2.5 md:gap-3">
-            {hasWordmarkLogo ? (
-              <span className="hidden min-w-0 md:block md:self-center">
+          <a
+            href="#"
+            className="group flex min-w-0 shrink items-center gap-2 sm:gap-2.5 md:gap-3.5 lg:gap-4"
+          >
+            {hasCoMark ? (
+              <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-brand-gold/45 bg-gradient-to-b from-brand-navy-light/60 to-brand-panel-deep shadow-[inset_0_1px_0_rgba(240,233,220,0.08),0_0_24px_-6px_rgba(196,160,40,0.35)] ring-1 ring-brand-gold/15 transition group-hover:border-brand-gold/65 md:h-11 md:w-11 lg:h-[50px] lg:w-[50px]">
+                <Image
+                  src="/images/co-logo-mark.png"
+                  alt=""
+                  width={52}
+                  height={52}
+                  className="h-6 w-6 object-contain md:h-9 md:w-9 lg:h-10 lg:w-10"
+                  priority
+                />
+              </span>
+            ) : hasWordmarkLogo ? (
+              <span className="min-w-0 self-center">
                 <Image
                   src="/images/commissioners-office-logo.png"
                   alt="The Commissioner’s Office"
                   width={360}
                   height={70}
-                  className="h-9 w-auto max-w-[min(100%,300px)] object-contain object-left transition-opacity group-hover:opacity-95 md:h-10 md:max-w-[min(100%,320px)] lg:h-11 lg:max-w-[min(100%,360px)]"
+                  className="h-8 w-auto max-w-[min(100%,280px)] object-contain object-left transition-opacity group-hover:opacity-95 sm:h-9 md:h-10"
                   priority
                 />
               </span>
             ) : null}
             {hasCoMark ? (
-              <span
-                className={`relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-brand-gold/45 bg-gradient-to-b from-brand-navy-light/60 to-brand-panel-deep shadow-[inset_0_1px_0_rgba(240,233,220,0.08),0_0_24px_-6px_rgba(196,160,40,0.35)] ring-1 ring-brand-gold/15 transition group-hover:border-brand-gold/65 md:h-10 md:w-10 ${hasWordmarkLogo ? "md:hidden" : ""}`}
-              >
-                <Image
-                  src="/images/co-logo-mark.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="h-6 w-6 object-contain md:h-8 md:w-8"
-                  priority
-                />
-              </span>
-            ) : null}
-            {!hasWordmarkLogo && !hasCoMark ? (
-              <span className="font-serif text-lg font-semibold tracking-tight">The Commissioner’s Office</span>
-            ) : null}
-            {hasWordmarkLogo ? (
-              <span className="flex min-w-0 flex-col leading-tight md:hidden">
-                <span className="font-serif text-[0.9375rem] font-semibold tracking-tight text-brand-ivory sm:text-base">
+              <span className="flex min-w-0 flex-col leading-[1.12]">
+                <span className="font-serif text-[0.9375rem] font-semibold tracking-tight text-brand-ivory sm:text-base md:text-xl md:leading-[1.15] lg:text-[1.375rem] xl:text-[1.4rem]">
                   The Commissioner’s Office
                 </span>
-                <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-brand-ivory-muted">
+                <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-brand-ivory-muted md:hidden">
                   commissionersoffice.games
                 </span>
+                <span className="mt-0.5 hidden font-mono text-[9px] font-medium uppercase tracking-[0.16em] text-brand-ivory-muted/95 md:block lg:mt-1 lg:text-[10px] lg:tracking-[0.18em]">
+                  Sports Franchise Simulation Platform
+                </span>
               </span>
+            ) : null}
+            {!hasCoMark && !hasWordmarkLogo ? (
+              <span className="font-serif text-lg font-semibold tracking-tight">The Commissioner’s Office</span>
             ) : null}
           </a>
 
