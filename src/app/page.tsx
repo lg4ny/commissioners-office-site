@@ -16,7 +16,7 @@ function publicImageExists(filename: string): boolean {
   }
 }
 
-const HERO_BANNER_PATH = "/images/hero-banner.png";
+const HERO_HOME_IMAGE = "/images/hero-dashboard.png";
 
 const hasGameUiShell = publicImageExists("game-ui-shell.png");
 const hasTeamPageHeader = publicImageExists("team-page-header.png");
@@ -139,7 +139,7 @@ function HeroVisual() {
         {/* object-cover + right-weighted focal point: emphasizes in-image UI / player card, de-emphasizes duplicate headline/CTA art on the left */}
         <div className="relative min-h-[360px] w-full overflow-hidden rounded-2xl border border-brand-gold/28 bg-brand-navy-mid shadow-[0_28px_72px_-32px_rgba(0,0,0,0.78),0_12px_48px_-24px_rgba(196,160,40,0.12),inset_0_1px_0_rgba(212,176,58,0.18)] ring-1 ring-black/40 sm:min-h-[400px] lg:min-h-[440px] xl:min-h-[460px]">
           <Image
-            src={HERO_BANNER_PATH}
+            src={HERO_HOME_IMAGE}
             alt="Front Office Baseball — league hub, standings, and in-game UI"
             fill
             className="object-cover object-[92%_46%] min-[400px]:object-[86%_46%] sm:object-[82%_46%] md:object-[78%_46%] lg:object-[72%_45%] xl:object-[70%_44%]"
