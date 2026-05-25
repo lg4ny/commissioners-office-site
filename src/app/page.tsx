@@ -736,6 +736,15 @@ export default function Home() {
           </div>
           <BrassRule className="my-8 opacity-60" />
           <p className="text-center font-mono text-[11px] text-brand-ivory-muted/75">
+            <a
+              href="/privacy"
+              className="text-brand-gold-bright/90 underline-offset-4 transition hover:text-brand-gold hover:underline"
+            >
+              Privacy &amp; disclosure
+            </a>
+            <span className="mx-2 text-brand-ivory-muted/50" aria-hidden>
+              ·
+            </span>
             © 2026 The Commissioner’s Office
           </p>
         </div>
