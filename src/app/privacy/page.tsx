@@ -7,12 +7,26 @@ const SOCIAL_X_URL = "https://x.com/CommissionersHQ";
 const SOCIAL_BLUESKY_URL = "https://bsky.app/profile/commishoffice.bsky.social";
 const CONTACT_EMAIL = "contact@commissionersoffice.games";
 
+const privacyDescription =
+  "Plain-English overview of analytics, forms, contact, and outbound links on the Commissioner’s Office marketing site.";
+
 export const metadata: Metadata = {
   title: "Privacy & Site Disclosure | The Commissioner’s Office",
-  description:
-    "Plain-English overview of analytics, forms, contact, and outbound links on the Commissioner’s Office marketing site.",
+  description: privacyDescription,
   alternates: {
     canonical: "/privacy",
+  },
+  openGraph: {
+    type: "website",
+    url: "/privacy",
+    siteName: "The Commissioner’s Office",
+    title: "Privacy & Site Disclosure | The Commissioner’s Office",
+    description: privacyDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy & Site Disclosure | The Commissioner’s Office",
+    description: privacyDescription,
   },
 };
 
