@@ -672,15 +672,57 @@ export default function Home() {
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl border border-brand-gold/18 bg-gradient-to-br from-brand-navy-mid/45 to-brand-panel-deep/35 px-6 py-10 shadow-[0_18px_52px_-28px_rgba(0,0,0,0.52),inset_0_1px_0_rgba(212,176,58,0.06)] sm:px-10 sm:py-12">
-              <h2 id="devlog-heading" className="font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl">
+              <SectionLabel>Build in public</SectionLabel>
+              <h2 id="devlog-heading" className="mt-4 font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl">
                 Follow the build
               </h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-ivory-muted">
-                Development updates will focus on real progress: design decisions, system notes,
-                screenshots, playtest learnings, and the path from internal alpha to public testing.
-                No hype machine — just the making of an indie sports sim in public.
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-brand-ivory-muted">
+                <span className="text-brand-ivory">Front Office Baseball</span> is in early alpha
+                consolidation. Updates will focus on real progress as the build earns it: interface
+                polish, franchise-loop tuning, curated screenshots, and playtest readiness.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-12">
+                <div>
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-gold/85">
+                    What updates may cover
+                  </h3>
+                  <ul
+                    className="mt-4 space-y-2.5 text-sm leading-relaxed text-brand-ivory-muted sm:text-base"
+                    role="list"
+                  >
+                    <li className="flex gap-2.5">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-gold/60" aria-hidden />
+                      Alpha polish, feature progress, and interface decisions
+                    </li>
+                    <li className="flex gap-2.5">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-gold/60" aria-hidden />
+                      Curated screenshots and roadmap thinking—not internal dumps
+                    </li>
+                    <li className="flex gap-2.5">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-gold/60" aria-hidden />
+                      Playtest readiness and what outside feedback would need to look like
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-gold/85">
+                    How to follow
+                  </h3>
+                  <div className="mt-4 space-y-4 text-sm leading-relaxed text-brand-ivory-muted sm:text-base">
+                    <p>
+                      <span className="text-brand-ivory">X and Bluesky</span> are for lighter build
+                      notes—screens, interface calls, and quick progress when there is something
+                      worth sharing.
+                    </p>
+                    <p>
+                      The <span className="text-brand-ivory">development list</span> is for bigger
+                      project updates and possible future playtest invitations when outside feedback
+                      makes sense—not immediate access.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href={WAITLIST_FORM_URL}
                   target="_blank"
