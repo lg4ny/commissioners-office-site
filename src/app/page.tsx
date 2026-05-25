@@ -2,6 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 import type { ReactNode } from "react";
 import Image from "next/image";
+import {
+  FeatureScreenshotShowcase,
+  type FeatureScreenshot,
+} from "../components/FeatureScreenshotShowcase";
 
 const WAITLIST_FORM_URL = "https://tally.so/r/OD8BZM";
 const SOCIAL_X_URL = "https://x.com/CommissionersHQ";
@@ -35,6 +39,49 @@ const firstGameAspectClass =
     : firstGameImageSrc === "/images/team-page-header.png"
       ? "aspect-[1983/793]"
       : "aspect-[1200/630]";
+
+const featureScreenshotCandidates: FeatureScreenshot[] = [
+  {
+    id: "shell",
+    src: "/images/game-ui-shell.png",
+    title: "Franchise shell",
+    caption:
+      "Season flow, roster tools, and league navigation from one management hub—built for readable GM sessions.",
+    alt: "Front Office Baseball in-game UI — franchise management shell",
+    aspectClass: "aspect-[1487/1058]",
+  },
+  {
+    id: "player",
+    src: "/images/player-profile-card.png",
+    title: "Player profiles",
+    caption:
+      "Stats, contracts, and career context on player cards designed for scouting and roster calls—not spreadsheet detours.",
+    alt: "Front Office Baseball — player profile card with stats and contract details",
+    aspectClass: "aspect-[1036/1518]",
+  },
+  {
+    id: "team",
+    src: "/images/team-page-header.png",
+    title: "Team command center",
+    caption:
+      "Club identity, standings context, and roster overview at a glance while you steer the franchise.",
+    alt: "Front Office Baseball — team page header with league standings context",
+    aspectClass: "aspect-[1983/793]",
+  },
+  {
+    id: "league",
+    src: "/images/hero-dashboard.png",
+    title: "League dashboard",
+    caption:
+      "Standings, schedules, and league pulse in the hub view—where every save’s season story starts to take shape.",
+    alt: "Front Office Baseball — league hub with standings and in-game UI",
+    aspectClass: "aspect-[1731/909]",
+  },
+];
+
+const featureScreenshots = featureScreenshotCandidates.filter((shot) =>
+  publicImageExists(shot.src.replace("/images/", "")),
+);
 
 const nav = [
   { label: "Games", href: "#games" },
@@ -471,6 +518,30 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Feature screenshots */}
+        {featureScreenshots.length > 0 ? (
+          <section
+            id="inside-fob"
+            className="scroll-mt-24 border-b border-brand-gold/10 py-16 sm:py-20"
+            aria-labelledby="inside-fob-heading"
+          >
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              <SectionLabel>Inside the game</SectionLabel>
+              <h2
+                id="inside-fob-heading"
+                className="mt-4 font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl"
+              >
+                Inside the Front Office
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-ivory-muted sm:mt-3 sm:text-base">
+                Early alpha screens from the build—curated product views, not a gallery of every
+                internal capture. Pick a feature area to preview the interface.
+              </p>
+              <FeatureScreenshotShowcase items={featureScreenshots} />
+            </div>
+          </section>
+        ) : null}
 
         {/* 8-team philosophy */}
         <section
