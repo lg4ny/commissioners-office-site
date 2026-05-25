@@ -134,10 +134,11 @@ const featurePillars = [
 
 const roadmapBoard = [
   { label: "Internal prototype playable", status: "active" as const },
-  { label: "8-team quick-start being refined", status: "active" as const },
-  { label: "Core franchise loop working", status: "active" as const },
-  { label: "UX clarity and replayability pass underway", status: "progress" as const },
-  { label: "External playtesting planned when the build earns it", status: "planned" as const },
+  { label: "8-team quick-start as product focus", status: "active" as const },
+  { label: "Core franchise loop established", status: "active" as const },
+  { label: "UX clarity, replayability, core loop tuning", status: "progress" as const },
+  { label: "Mobile usability and playtest readiness", status: "progress" as const },
+  { label: "External playtesting when the build earns it", status: "planned" as const },
 ] as const;
 
 const fobTags = [
@@ -620,17 +621,27 @@ export default function Home() {
               Alpha status
             </p>
             <h2 id="roadmap-heading" className="mt-2 font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl">
-              Currently in alpha consolidation
+              Early alpha consolidation
             </h2>
-            <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
-              <p className="text-base leading-relaxed text-brand-ivory-muted sm:text-[1.05rem]">
-                The internal prototype already supports league generation, season simulation,
-                playoffs, offseason flow, draft, trades, contracts, free agency, injuries, prospect
-                progression, team strategy, awards, records, Hall of Fame cases, and long-save
-                history. The current work is about clarity, pacing, UI polish, and replayability
-                before opening the doors wider.
-              </p>
-              <div className="rounded-2xl border border-brand-gold/20 bg-brand-panel-deep/85 p-6 shadow-[inset_0_2px_14px_rgba(0,0,0,0.38)]">
+            <p className="mt-3 max-w-3xl text-sm leading-snug text-brand-ivory-muted sm:mt-4 sm:text-base sm:leading-relaxed">
+              The build is playable internally. The current stage is about making that experience
+              clearer, faster to read, more replayable, and ready for outside feedback — not
+              shipping a launch date.
+            </p>
+            <div className="mt-6 grid gap-6 sm:mt-8 sm:gap-8 lg:mt-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
+              <div className="order-2 space-y-3 text-sm leading-relaxed text-brand-ivory-muted sm:space-y-4 sm:text-base lg:order-1 lg:text-[1.05rem]">
+                <p>
+                  The core franchise loop is already in place across season simulation, playoffs,
+                  offseason decisions, drafts, trades, contracts, free agency, injuries, prospects,
+                  awards, records, and long-save history.
+                </p>
+                <p>
+                  External playtesting comes when the build earns it — no fixed timeline. Joining the
+                  development list means development updates and possible future playtest
+                  invitations when outside feedback makes sense — not immediate access.
+                </p>
+              </div>
+              <div className="order-1 rounded-2xl border border-brand-gold/20 bg-brand-panel-deep/85 p-5 shadow-[inset_0_2px_14px_rgba(0,0,0,0.38)] sm:p-6 lg:order-2">
                 <div className="flex items-center justify-between border-b border-brand-gold/15 pb-3">
                   <SectionLabel>Roadmap board</SectionLabel>
                   <span className="font-mono text-[9px] uppercase tracking-wider text-brand-ivory-muted">
