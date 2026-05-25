@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/og-commissioners-office.png",
+        width: 1200,
+        height: 630,
         alt: "The Commissioner’s Office",
       },
     ],
