@@ -133,12 +133,12 @@ const featurePillars = [
 ] as const;
 
 const roadmapBoard = [
-  { label: "Internal prototype playable", status: "active" as const },
+  { label: "Playable private MVP live with early testers", status: "active" as const },
   { label: "8-team quick-start as product focus", status: "active" as const },
   { label: "Core franchise loop established", status: "active" as const },
   { label: "UX clarity, replayability, core loop tuning", status: "progress" as const },
-  { label: "Mobile usability and playtest readiness", status: "progress" as const },
-  { label: "External playtesting when the build earns it", status: "planned" as const },
+  { label: "Mobile usability and broader readiness", status: "progress" as const },
+  { label: "Future feedback rounds from the development list", status: "planned" as const },
 ] as const;
 
 const fobTags = [
@@ -403,8 +403,8 @@ export default function Home() {
                   <span className="text-brand-gold/90" aria-hidden>
                     ·
                   </span>
-                  <span className="sm:hidden">Early Alpha</span>
-                  <span className="hidden sm:inline">Early Alpha Consolidation</span>
+                  <span className="sm:hidden">Private MVP</span>
+                  <span className="hidden sm:inline">Playable Private MVP</span>
                 </StatusChip>
               </div>
 
@@ -536,8 +536,8 @@ export default function Home() {
                 Inside the Front Office
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-ivory-muted sm:mt-3 sm:text-base">
-                Early alpha screens from the build—curated product views, not a gallery of every
-                internal capture. Pick a feature area to preview the interface.
+                Current MVP build screens—curated product views, not a gallery of every internal
+                capture. Pick a feature area to preview the interface.
               </p>
               <FeatureScreenshotShowcase items={featureScreenshots} />
             </div>
@@ -618,15 +618,16 @@ export default function Home() {
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-brand-gold">
-              Alpha status
+              Private MVP status
             </p>
             <h2 id="roadmap-heading" className="mt-2 font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl">
-              Early alpha consolidation
+              Playable private MVP
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-snug text-brand-ivory-muted sm:mt-4 sm:text-base sm:leading-relaxed">
-              The build is playable internally. The current stage is about making that experience
-              clearer, faster to read, more replayable, and ready for outside feedback — not
-              shipping a launch date.
+              Front Office Baseball has reached a playable private MVP — a small early tester
+              group is running franchises in a live build. The current stage is about making that
+              experience clearer, faster to read, and more replayable — not shipping a launch
+              date.
             </p>
             <div className="mt-6 grid gap-6 sm:mt-8 sm:gap-8 lg:mt-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
               <div className="order-2 space-y-3 text-sm leading-relaxed text-brand-ivory-muted sm:space-y-4 sm:text-base lg:order-1 lg:text-[1.05rem]">
@@ -636,9 +637,10 @@ export default function Home() {
                   awards, records, and long-save history.
                 </p>
                 <p>
-                  External playtesting comes when the build earns it — no fixed timeline. Joining the
-                  development list means development updates and possible future playtest
-                  invitations when outside feedback makes sense — not immediate access.
+                  Access is deliberately limited while the core loop is refined, with no fixed
+                  public timeline. Future feedback rounds may be drawn from the
+                  development list — joining means development updates first, not immediate
+                  access.
                 </p>
               </div>
               <div className="order-1 rounded-2xl border border-brand-gold/20 bg-brand-panel-deep/85 p-5 shadow-[inset_0_2px_14px_rgba(0,0,0,0.38)] sm:p-6 lg:order-2">
@@ -677,9 +679,10 @@ export default function Home() {
                 Follow the build
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-brand-ivory-muted">
-                <span className="text-brand-ivory">Front Office Baseball</span> is in early alpha
-                consolidation. Updates will focus on real progress as the build earns it: interface
-                polish, franchise-loop tuning, curated screenshots, and playtest readiness.
+                <span className="text-brand-ivory">Front Office Baseball</span> has reached a
+                playable private MVP. Updates will focus on real progress: interface polish,
+                franchise-loop tuning, curated screenshots, and readiness for future feedback
+                rounds.
               </p>
               <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-12">
                 <div>
@@ -692,7 +695,7 @@ export default function Home() {
                   >
                     <li className="flex gap-2.5">
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-gold/60" aria-hidden />
-                      Alpha polish, feature progress, and interface decisions
+                      MVP polish, feature progress, and interface decisions
                     </li>
                     <li className="flex gap-2.5">
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-gold/60" aria-hidden />
@@ -715,9 +718,9 @@ export default function Home() {
                       worth sharing.
                     </p>
                     <p>
-                      The <span className="text-brand-ivory">development list</span> is for bigger
-                      project updates and possible future playtest invitations when outside feedback
-                      makes sense—not immediate access.
+                      The <span className="text-brand-ivory">development list</span> is where
+                      updates land first—and where future feedback rounds will be drawn from.
+                      Access is limited and not immediate.
                     </p>
                   </div>
                 </div>
@@ -776,11 +779,12 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 id="join-heading" className="font-serif text-2xl font-semibold text-brand-ivory sm:text-3xl">
-                Get on the development/playtest list.
+                Get on the development list.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-brand-ivory-muted">
-                Join the list for future updates and possible playtest opportunities when Front
-                Office Baseball is ready for outside feedback.
+                Front Office Baseball has reached a playable private MVP. Join the development
+                list for updates first—future feedback rounds may be drawn from here. Access is
+                limited and not immediate.
               </p>
               <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap">
                 <a
