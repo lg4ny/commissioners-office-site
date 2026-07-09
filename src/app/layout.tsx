@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "The Commissioner’s Office | Indie Sports Franchise Simulation",
   description:
-    "Run your franchise. Build a dynasty. Shape history. The Commissioner’s Office is an indie sports franchise simulation platform starting with Front Office Baseball, a fictional baseball GM sim currently in early alpha.",
+    "Run your franchise. Build a dynasty. Shape history. Front Office Baseball has reached a playable private MVP with a small early tester group; access is limited via the development list.",
   alternates: {
     canonical: "/",
   },
